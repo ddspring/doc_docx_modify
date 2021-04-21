@@ -113,9 +113,13 @@ if __name__ == "__main__":
     path = input()
     if(0 == len(path)):
         path = os.getcwd()
+        
+    timeStr = time.strftime("%Y-%M-%D_%H%M%S",time.localtime())
+    log("----------------- %s doc convert and docx modify start..."%(timeStr))
+    
     doc_to_docx(path)
     change_header(path)
-    print("docx modify done,modify count=%d.press any key to exit."%(change_count))
+    log("docx modify done,modify count=%d.press any key to exit."%(change_count))
     input()
     
 
